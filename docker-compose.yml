@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  asset-api:
+    build: ./level-3-api
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+    depends_on:
+      - fabric-network
+    networks:
+      - fabric-network
+
+networks:
+  fabric-network:
+    external: true
